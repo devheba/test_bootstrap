@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Al - Marbed </title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<link rel="shortcut icon" href="images/logo.ico" type="image/icon">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+	<script>
+		function initialize() {
+			  var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+			  var mapOptions = {
+				zoom: 4,
+				center: myLatlng
+			  }
+			  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+			  var marker = new google.maps.Marker({
+				  position: myLatlng,
+				  map: map,
+				  title: 'Hello World!'
+			  });
+			}
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+	  
+		
+				$(document).ready(function(){
+				
+                    $(window).scroll(function(){
+                      var scroll = $('body').scrollTop();
+                      if( scroll >= 30 ){
+                          $('#second_head').css('top','0px');
+                      } else {
+                           $('#second_head').css('top','40px');
+                      }
+                    });
+				$('.search-btn').click(function(){
+					$('#top_head > div > div > div.pull-left > ul > li:nth-child(3) > form > div > input').fadeToggle('slow');
+				});
+			
+				/* Scroll menu animation */
+					$('#second_head a[href^="#"]').on('click',function (e) {
+						e.preventDefault();
+
+						var target = this.hash;
+						var $target = $(target);
+
+						$('html, body').stop().animate({
+							'scrollTop': $target.offset().top
+						}, 1100, 'swing', function () {
+							$('#navbar-collapse-main').removeClass('in');
+							window.location.hash = target;
+							
+						});
+					}); 
+				 
+				});
+         
+	</script>
+  </head>
+  <body>
+	<header>
+		<!-- Top head -->
+		<div class="" id="top_head">
+			<div class="container">
+				<div class="row content1">
+					<div class="pull-left">
+                        <ul class="list-inline">
+						<li><a href="#">Contact</a></li>
+						<li><a href="#about_us">About Us</a></li>                            
+						<li><form role="form" class="header_search collapsed">
+                                <div class="input-group">
+                                    <span class="input-group-addon search-btn"><i class="fa fa-search fa-fw"></i></span>
+                                    <input type="text" class="form-control" style="display: none;">
+                                </div>
+                              </form></li>
+                        </ul>
+                    </div>
+					
+					<div class="pull-right">
+                        <ul class="list-inline social-links">
+                        <!-- <li><a href="#"><i class="fa fa-facebook-official"></i></a></li> -->
+						<li><a href="#" id="fb"></a></li>
+						<li><a href="#" id="twitter"></a></li>
+						<li><a href="#" id="google"></a></li>
+						<li><a href="#" id="insta"></a></li>
+                        </ul>
+                    </div>
+
+				</div>
+			</div>
+		</div>
+	  <!-- second head-->
+	  <div class="" id="second_head" style="top: 40px;">
+		  <div class="content1">
+			<nav class="navbar navbar-default menu2">
+						  <div class="container">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+							  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main" aria-expanded="true">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							  </button>
+							  <a class="navbar-brand" href="home"><img src="images/logo.png" class="img-responsive" id="logo"></a>
+							</div>
+
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="navbar-collapse menu2 collapse" id="navbar-collapse-main" aria-expanded="true">
+								<ul class="nav navbar-nav navbar-right">
+								<li class="active"><a href="#top_head">Home</a><span></span></li>
+								<li><a href="#about_us">About Us</a><span></span></li>
+								<li><a href="#projects">Projects</a><span></span></li>
+								<li><a href="#gallery">Products</a><span></span></li>
+								<li><a href="#gallery">Gallery</a><span></span></li>
+								<li><a href="#brands">Our Brands</a><span></span></li>
+								<li><a href="#news">News</a><span></span></li>
+								<li><a href="#">Career</a><span></span></li>
+							  </ul>
+`                           </div><!-- /.navbar-collapse -->
+						  </div><!-- /.container-fluid -->
+                </nav>
+		  </div>
+	  </div>
+	</header>
+	<!------------------->
+	<div class="content">
+		<div class="content1 content1_slider">
+		
+		
+
+		
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+			  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			  <li data-target="#myCarousel" data-slide-to="1"></li>
+			  <li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+			  <div class="item active">
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="caption caption_slide">
+							<h2>Title</h2>
+							<p>paragraph here paragraph here </p>
+							<a href="#" class="btn btn-primary">Click</a>
+						</div>
+					</div>
+					<div class="col-xs-6 img_slide">
+						<img src="images/img1.jpg" alt="flower1" width="460" height="345">
+					</div>
+				</div>
+			  </div>
+			  <div class="item">
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="caption caption_slide">
+							<h2>Title2</h2>
+							<p>paragraph2 here</p>
+							<a href="#" class="btn btn-primary">Click</a>
+						</div>
+					</div>
+					<div class="col-xs-6 img_slide">
+						<img src="images/img2.jpg" alt="flower1" width="460" height="345">
+					</div>
+				</div>
+			  </div>
+			  <div class="item">
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="caption caption_slide">
+							<h2>Title3</h2>
+							<p>paragraph here</p>
+							<a href="#" class="btn btn-primary">Click</a>
+						</div>
+					</div>
+					<div class="col-xs-6 img_slide">
+						<img src="images/img3.jpg" alt="flower1" width="460" height="345">
+					</div>
+				</div>
+			  </div>
+
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control slider_btn" href="#myCarousel" role="button" data-slide="prev">
+			  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			  <span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control slider_btn" href="#myCarousel" role="button" data-slide="next">
+			  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			  <span class="sr-only">Next</span>
+			</a>
+		  </div> <!-- myCarousel -->
+		  </div> <!-- div.content1_slider -->
+		<div class="news" id="news">
+			<div class="content1 content1_slider">
+				<h3>Our News</h3>
+				<img src="images/points.png" id="points"/>
+				<div class="row">
+				  <div class="col-sm-6 col-md-4">
+					<div class="thumbnail thumbnail2">
+					  <img src="images/img1.jpg" alt="" width="297" height="183">
+					  <div class="caption">
+						<h3>Title Title Title </h3>
+						<p>Details description Details description Details description Details description Details description </p>
+						<p><a href="#" class="btn btn-primary" role="button">Read More</a></p>
+					  </div>
+					</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+					<div class="thumbnail thumbnail2">
+					  <img src="images/img2.jpg" alt="" width="297" height="183">
+					  <div class="caption">
+						<h3>Title Title Title </h3>
+						<p>Details description Details description Details description Details description Details description </p>
+						<p><a href="#" class="btn btn-primary" role="button">Read More</a></p>
+					  </div>
+					</div>
+					</div>
+					<div class="col-sm-6 col-md-4">
+					<div class="thumbnail thumbnail2">
+					  <img src="images/img3.jpg" alt="" width="297" height="183">
+					  <div class="caption">
+						<h3>Title Title Title </h3>
+						<p>Details description Details description Details description Details description Details description </p>
+						<p><a href="#" class="btn btn-primary" role="button">Read More</a></p>
+					  </div>
+					</div>
+					</div>
+					
+				  </div>
+			    </div>
+			</div> <!-- .content1 end -->
+		<div class="about_us" id="about_us">
+			<div class="content1 content1_slider">
+				<h3>About Us </h3>
+				<img src="images/points.png" id="points" />
+				<div class="row">
+					<div class="col-sm-6 col-md-6">
+					<div class="detail_about">
+					  <img src="images/img1.jpg" alt="" width="375" height="233">
+					</div>
+					</div>
+					<div class="col-sm-6 col-md-6">
+					<div class="detail_about">
+					  <p>Details description Details description Details description Details description Details description Details description Details description Details description Details description Details description Details description Details description Details description Details description Details description </p>
+						<p><a href="#" class="btn btn-primary" role="button">Read More</a></p>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="gallery" id="gallery">
+			<div class="row tit_gall">
+				<h3>Our Gallery</h3>
+				<img src="images/points2.png" id="points"/>
+			</div>
+				<div class="row">
+				  
+				  <div class="col-xs-3 col-md-3">
+				  <div class="gallery-item">
+					<a href="#" class="thumbnail gall_thumb">
+					  <img src="images/img1.jpg" alt="..." class="img-responsive">
+					  <div class="layer"></div>
+					</a>
+				   </div>
+				  </div>
+				  <div class="col-xs-3 col-md-3">
+				  <div class="gallery-item">
+					<a href="#" class="thumbnail gall_thumb">
+					  <img src="images/img1.jpg" alt="..." class="img-responsive">
+					  <div class="layer"></div>
+					</a>
+				   </div>
+				  </div>
+				  <div class="col-xs-3 col-md-3">
+				  <div class="gallery-item">
+					<a href="#" class="thumbnail gall_thumb">
+					  <img src="images/img1.jpg" alt="..." class="img-responsive">
+					  <div class="layer"></div>
+					</a>
+				   </div>
+				  </div>
+				  <div class="col-xs-3 col-md-3">
+				  <div class="gallery-item">
+					<a href="#" class="thumbnail gall_thumb">
+					  <img src="images/img1.jpg" alt="...">
+					  <div class="layer"></div>
+					</a>
+				   </div>
+				  </div>
+				  
+				</div>
+				<div class="row">
+				  <div class="col-xs-3 col-md-3">
+				  <div class="gallery-item">
+					<a href="#" class="thumbnail gall_thumb">
+					  <img src="images/img1.jpg" alt="..." class="img-responsive">
+					  <div class="layer"></div>
+					</a>
+				   </div>
+				  </div>
+				  
+				  <div class="col-xs-3 col-md-3">
+				  <div class="gallery-item">
+					<a href="#" class="thumbnail gall_thumb">
+					  <img src="images/img1.jpg" alt="..." class="img-responsive">
+					  <div class="layer"></div>
+					</a>
+				   </div>
+				  </div>
+				  
+				  <div class="col-xs-3 col-md-3">
+				  <div class="gallery-item">
+					<a href="#" class="thumbnail gall_thumb">
+					  <img src="images/img1.jpg" alt="..." class="img-responsive">
+					  <div class="layer"></div>
+					</a>
+				   </div>
+				  </div>
+				  <div class="col-xs-3 col-md-3">
+				  <div class="gallery-item">
+					<a href="#" class="thumbnail gall_thumb">
+					  <img src="images/img1.jpg" alt="..." class="img-responsive">
+					  <div class="layer"></div>
+					</a>
+				   </div>
+				  </div>
+				  
+				</div><br><br> 
+				
+				<p><a href="#" class="btn btn-primary" role="button">All Gallery</a></p>
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+						<div class="modal-content">         
+						  <div class="modal-body">                
+						  </div>
+						</div><!-- /.modal-content -->
+					  </div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+				
+		</div>
+		<div class="projects" id="projects">
+			<div class="content1 project_cont">
+			<h3>Projects</h3>
+			<img src="images/points.png" id="points"/>
+			<ul class="list-inline projects_list">
+					<li>
+                            <h5>Hardrock Restaurant Salmiya</h5>
+                        </li><li>
+                            <h5>Hardrock Restaurant Salmiya</h5>
+                        </li><li>
+                            <h5>Shrimpy Village Restaurant</h5>
+                        </li><li>
+                            <h5>Hardrock Restaurant Salmiya</h5>
+                        </li><li>
+                            <h5>Hardrock Restaurant Salmiya</h5>
+                        </li><li>
+                            <h5>Shrimpy Village Restaurant</h5>
+                        </li><li>
+                            <h5>Wafra Res. &amp; Commercial Buildings, Hawally</h5>
+                        </li><li>
+                            <h5>Khalid Al Mehri Clinic</h5>
+                        </li><li>
+                            <h5>Shuaiba Factory</h5>
+                        </li><li>
+                            <h5>Wafra Res. &amp; Commercial Buildings, Hawally</h5>
+                        </li><li>
+                            <h5>Khalid Al Mehri Clinic</h5>
+                        </li><li>
+                            <h5>Shuaiba Factory</h5>
+                        </li>					</ul>
+		</div> <!--  .project_cont end  -->
+		<br>
+		<p><a href="#" class="btn btn-primary" role="button">All Projects</a></p>
+		<br>
+		</div> <!-- .projects end-->
+		<!----------------------------->
+		<div class="brands" id="brands">
+			<div class="content1">
+			<h3>Brands</h3>
+			<img src="images/points.png" id="points"/>
+			
+			<div class="content1 content1_slider">
+		<div id="myCarousel2" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators circles2">
+			  <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+			  <li data-target="#myCarousel2" data-slide-to="1"></li>
+			  <li data-target="#myCarousel2" data-slide-to="2"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+			  <div class="item active">
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="brand-item">
+						<img src="images/brand1.jpg" alt="brand1" class="img-responsive" />
+						 <div class="layer"></div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<img src="images/brand2.jpg" alt="brand2"  class="img-responsive"/>
+					</div>
+					<div class="col-xs-3">
+						<img src="images/brand3.jpg" alt="brand3"  class="img-responsive"/>
+					</div>
+					<div class="col-xs-3">
+						<img src="images/brand4.jpg" alt="brand4"  class="img-responsive"/>
+					</div>
+				</div>
+			  </div>
+			  <div class="item">
+				<div class="row">
+					<div class="col-xs-3">
+						<img src="images/brand1.jpg" alt="brand1" class="img-responsive">
+					</div>
+					<div class="col-xs-3">
+						<img src="images/brand2.jpg" alt="brand2" class="img-responsive">
+					</div>
+					<div class="col-xs-3">
+						<img src="images/brand3.jpg" alt="brand3"  class="img-responsive">
+					</div>
+					<div class="col-xs-3">
+						<img src="images/brand4.jpg" alt="brand4" class="img-responsive">
+					</div>
+				</div>
+			  </div>
+			  <div class="item">
+				<div class="row">
+					<div class="col-xs-3">
+						<img src="images/brand1.jpg" alt="brand1"  class="img-responsive">
+					</div>
+					<div class="col-xs-3">
+						<img src="images/brand2.jpg" alt="brand2"  class="img-responsive">
+					</div>
+					<div class="col-xs-3">
+						<img src="images/brand3.jpg" alt="brand3"  class="img-responsive">
+					</div>
+					<div class="col-xs-3">
+						<img src="images/brand4.jpg" alt="brand4" class="img-responsive">
+					</div>
+				</div>
+			  </div>
+			  
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control slider_btn" href="#myCarousel2" role="button" data-slide="prev">
+			  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			  <span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control slider_btn" href="#myCarousel2" role="button" data-slide="next">
+			  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			  <span class="sr-only">Next</span>
+			</a>
+		  </div> <!-- myCarousel -->
+		  </div> <!--  -->
+		</div> <!--  .content1 end -->
+		<br><br><br>
+		</div> <!--  .brands end -->
+	
+	<div class="map" id="map">
+		<div id="map-canvas"></div>
+		<!-- <img src="images/map.jpg" />  -->
+	</div>
+		</div> <!--div.content End -->
+	<footer>
+		<div class="content1">
+		<div class="row">
+					<div class="col-sm-8 col-xs-6">
+					  <span> 2015 &copy; Al MARBED . ALL RIGHTS RESERVED.</span>
+					</div>
+
+					<div class="col-sm-4 col-xs-6 icons_ul">
+					  <ul class="list-inline">
+						<li><a href="#" id="fb"></a></li>
+						<li><a href="#" id="twitter"></a></li>
+						<li><a href="#" id="google"></a></li>
+						<li><a href="#" id="insta"></a></li>
+					  </ul>
+					</div>
+				</div>
+				</div>
+	</footer>
+	<script>
+		$(document).ready(function(){
+				
+				$(' a img').on('click',function(){
+						var src = $(this).attr('src');
+						var img = '<img src="' + src + '" class="img-responsive"/>';
+						$('#myModal').modal();
+						$('#myModal').on('shown.bs.modal', function(){
+							$('#myModal .modal-body').html(img);
+						});
+						$('#myModal').on('hidden.bs.modal', function(){
+							$('#myModal .modal-body').html('');
+						});
+				   });  
+				 $('a img').on('hover',function(){
+					$('a img').fadeTo(0, 0.0);
+					});
+				document.addEventListener("touchstart", function(){}, true); 
+			});
+	</script>
+  </body>
+</html>
